@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="admin/fragments/head :: head"></head>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<!-- Site wrapper -->
+	<div class="wrapper">
+
+		<head th:replace="admin/fragments/header :: header"></head>
+
+		<!-- =============================================== -->
+
+		<!-- Left side column. contains the sidebar -->
+		<div th:replace="admin/fragments/sidebar :: sidebar"></div>
+
+		<!-- =============================================== -->
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>
+					Blank page
+					<small>it all starts here</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+					<li><a href="#">Examples</a></li>
+					<li class="active">Blank page</li>
+				</ol>
+			</section>
+
+			<!-- Main content -->
+			<section class="content">
+
+
+				<div class="col-md-6">
+					<div class="box box-primary">
+						<div class="box-header with-border">
+							<h3 class="box-title">Quick Example</h3>
+						</div>
+
+
+						<form role="form" method="post" th:action="@{/admin/add-category}" th:object="${category}">
+							
+							<div class="box-body">
+								<div class="form-group">
+									<label for="exampleInputEmail1">Category Name</label>
+									<input type="text" class="form-control" id="exampleInputEmail1" th:field="*{categoryName}" />
+										
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Category Status</label>
+								</div>
+										<div class="form-check form-check-inline">
+											<input type="radio" class="form-check-input" th:field="*{categoryStatus}" value="1" />												 
+											<label class="form-check-label" for="inlineRadio1">Active</label>
+										</div>
+
+										<div class="form-check form-check-inline">
+											<input type="radio" class="form-check-input" th:field="*{categoryStatus}" value="0" />
+											<label class="form-check-label" for="inlineRadio2">Hidden</label>
+										</div>
+									</div>
+								</div>
+							
+							<div class="box-footer">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+
+
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<head th:replace="admin/fragments/footer :: footer"></head>
+
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- jQuery 3 -->
+
+	<head th:replace="admin/fragments/script :: script"></head>
+</body>
+
+</html>
